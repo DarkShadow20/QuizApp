@@ -1,0 +1,21 @@
+.row{
+    margin-top: 0.5rem;
+}
+.btn-light{
+    background-color: black;
+    color: #fff;
+}
+
+@media only screen and (min-width: 600px) {
+    .card{
+        max-height: 80%;
+    }
+    .card-img-top{
+        max-height: 50%;
+    }
+    .btn-light{
+        margin-top: 1rem;
+        background-color: black;
+        color: #fff;
+    }
+}
