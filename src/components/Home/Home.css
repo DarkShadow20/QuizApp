@@ -13,12 +13,12 @@
     margin-top: 5rem;
     text-align: center;
     font-weight: 600;
-    color: #374151;
+    color: var(--tertiary);
 }
 .text-explore-bottom{
     text-align: center;
     font-weight: 600;
-    color: #374151;
+    color: var(--tertiary);
 }
 @media only screen and (min-width: 600px) {
     .btn-dark{

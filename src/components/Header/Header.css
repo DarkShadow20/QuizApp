@@ -1,6 +1,6 @@
 .header-link{
     text-decoration: none;
-    color:white;
+    color:var(--primary);
     text-transform: uppercase;
     font-size: 200;
     letter-spacing: 0.2rem;

@@ -8,8 +8,8 @@
 }
 .in{
     flex-direction: column;
-    background-color: #9CA3AF;
-    color: #fff;
+    background-color: var(--modal-color);
+    color: var(--primary);
     margin-left: 20%;
     margin-right: 50%;
     width: 70%;

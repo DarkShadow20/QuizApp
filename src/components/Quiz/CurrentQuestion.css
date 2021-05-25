@@ -11,7 +11,7 @@
 }
 .option-btn{
     margin-top:1rem;
-    background-color: #F3F4F6;
+    background-color: var(--bgcolor);
     border: none;
     border-radius: 1rem;
     max-height: 5rem;
@@ -19,8 +19,8 @@
 }
 .btn-view{
     border: none;
-    background-color: #000;
-    color:#fff;
+    background-color: var(--secondary);
+    color:var(--primary);
     margin-left: 0.5rem;
     padding: 1rem;
     margin-top: 1rem;
