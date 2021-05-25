@@ -1,4 +1,5 @@
 import { useQuiz } from '../../context/quizContext';
+import {Link} from "react-router-dom";
 import {
 	styleRightAndWrongAnswers,
 	isOptionSelected,
@@ -73,6 +74,9 @@ export const CheckAnswers = () => {
 					);
 				})}
 			</div>
+			<Link to="/dashboard">
+				<button className="btn btn-dark" style={{margin:"0 0 1rem 0" , width:"100%"}}>Go to Categories</button>
+			</Link>
 		</div>
 	);
 };
