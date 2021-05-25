@@ -1,25 +1,30 @@
 .instruction-modal{
     display: flex;
     position: absolute;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 1;
-    opacity: 1;
+    background-color: rgba(0,0,0,0.651);
 }
 .in{
     flex-direction: column;
-    background-color: var(--modal-color);
+    background-color:var(--modal-color);
     color: var(--primary);
     margin-left: 20%;
     margin-right: 50%;
     width: 70%;
     height: 80%;
+    opacity: 2;
+    z-index: 3;
 }
 .btn-quit{
     border: none;
 }
 
 @media only screen and (min-width:600px){
+    .instruction-modal{
+    background-color: rgba(0,0,0,0.651);
+    }
     .in{
         width: 60%;
         height: 60%;

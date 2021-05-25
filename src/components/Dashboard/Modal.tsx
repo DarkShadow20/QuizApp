@@ -15,7 +15,7 @@ export const Modal=({...props})=>{
 	};
     return(
        <div className="instruction-modal">
-           <div className="in instruction-modal modal-header ">
+           <div className="in  modal-header " style={{opacity:1}}>
                 <div className="fs-3">Instructions</div>
                 <ul className="fs-5 mt-5 ">
                     <li className="mt-2">There are negative marks for wrong answer</li>

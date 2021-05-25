@@ -1,6 +1,4 @@
-.row{
-    margin-top: 0.5rem;
-}
+
 .btn-light{
     background-color: var(--secondary);
     color: var(--primary);
