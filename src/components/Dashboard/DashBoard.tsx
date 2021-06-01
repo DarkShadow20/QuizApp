@@ -11,7 +11,7 @@ export const Dashboard=()=>{
     const [quizId,setId]=useState("")
     const quizCard = (quiz: Quiz) => {
 		return (
-                <div className="col" key={quiz.id}>
+                <div className="col" key={quiz._id}>
                     <div className="card h-100">
                         <img src={quiz.image} className="card-img-top" alt="..."/>
                         <div className="card-body">
@@ -19,10 +19,10 @@ export const Dashboard=()=>{
                             <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <button
                                     className="btn btn-light"
-                                    id={quiz.id}
+                                    id={quiz._id}
                                     onClick={() => {
                                         setShow(true)
-                                        setId(quiz.id)}}>
+                                        setId(quiz._id)}}>
                                     TAKE QUIZ
                                 </button>
                         </div>

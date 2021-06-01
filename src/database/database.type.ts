@@ -1,11 +1,11 @@
 export type Option={
-    id:string;
+    _id:string;
     text:string;
     isRight:boolean;
 }
 
 export type Question={
-    id:string;
+    _id:string;
     question:string;
     points:number;
     negativePoints:number;
@@ -13,7 +13,7 @@ export type Question={
 }
 
 export type Quiz={
-    id:string;
+    _id:string;
     genre:string;
     description:string;
     image:string;

@@ -8,10 +8,9 @@ export const quizReducer = (state: State, action: ActionType): State => {
 				quiz: action.payload,
 			};
 		case 'INCREMENT_QUESTION_NUMBER':
-			const currentQuestionNumberTemp = state.currentQuestionNumber + 1;
 			return {
 				...state,
-				currentQuestionNumber: currentQuestionNumberTemp,
+				currentQuestionNumber: state.currentQuestionNumber + 1,
 			};
 		case 'UPDATE_SCORE':
 			return {
