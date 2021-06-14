@@ -1,12 +1,22 @@
 import axios from "axios";
 
 export const AuthApiLogin = async (email: string, password: string,token:string) => {
+    if(token){
+      const response = await axios.post(
+        "https://QuizApp.kunalgupta9.repl.co/users/login",
+        {
+          email,
+          password,
+        },{headers:{authorization:token}}
+      );
+      return response;
+    }
     const response = await axios.post(
       "https://QuizApp.kunalgupta9.repl.co/users/login",
       {
         email,
         password,
-      },{headers:{authorization:token}}
+      }
     );
     return response;
   };

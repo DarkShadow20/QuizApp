@@ -19,10 +19,10 @@ export const AuthProvider: React.FC = ({ children }) => {
         const response = await AuthApiLogin(email, password,token);
         if (response.data.success) {
             setLogin(true);
-            // localStorage.setItem(
-            //   "QuizAuth",
-            //   JSON.stringify({ userID: response.data.id })
-            // );
+            localStorage.setItem(
+              "QuizAuth",
+              JSON.stringify({ tokens: response.data.token })
+            );
             return { success: response.data.success };
         }
         } catch (error) {
@@ -61,6 +61,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         loginUserWithCredentials,
         signinUser,
         LogOut,
+        token
       }}
     >
       {children}

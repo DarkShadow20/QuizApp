@@ -5,6 +5,7 @@ export type AuthenticationContextType = {
     loginUserWithCredentials: (email: string, password: string) => any
     signinUser: (name: string, email: string, password: string) => any
     LogOut: () => void,
+	token:string
 }
 export type Result = {
 	id: string;

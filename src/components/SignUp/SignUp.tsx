@@ -21,7 +21,6 @@ export const SignUp = () => {
         const response = await signinUser(username, email, password);
         console.log(response)
         if (response.success) {
-            console.log("hello")
             navigate("/");
         }
         else {
