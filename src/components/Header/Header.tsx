@@ -7,6 +7,12 @@ export const Header=()=>{
                 <Link to="/" className="header-link">
                     <p>NEOQUIZ</p>
                 </Link>
+                <Link to="/login" className="header-link">
+                    <p>Login</p>
+                </Link>
+                <Link to="/signup" className="header-link">
+                    <p>Signup</p>
+                </Link>
             </div>
         </>
     )

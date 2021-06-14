@@ -1,0 +1,27 @@
+.form-control{
+    max-width: 90%;
+}
+.container-md{
+    z-index: -1;
+}
+.password-state{
+    position: absolute;
+    right: 3rem;
+    top: 0.2rem;
+}
+@media only screen and (min-width: 600px) {
+    .form-control{
+        max-width: 100%;
+    }
+    .container-md{
+        z-index: -1;
+    }
+    .password-state{
+        position: absolute;
+        right: 1rem;
+        top: 0.2rem;
+    }
+    .center{
+        margin-left: 33rem;
+    }
+}

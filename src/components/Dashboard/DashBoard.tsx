@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useQuiz } from '../../context/quizContext';
 import { Quiz } from '../../database/database.type';
 import { Header } from '../Header/Header';
 import "./DashBoard.css"
 import { Modal } from './Modal';
+import axios from "axios";
 
 export const Dashboard=()=>{
-    const { quizState } = useQuiz();
+    const { quizState,quizDispatch } = useQuiz();
     const [show,setShow]=useState(false)
     const [quizId,setId]=useState("")
+    useEffect(() => {
+        (async function(){
+            const response=await axios.get("https://QuizApp.kunalgupta9.repl.co/quiz")
+            quizDispatch({type:'LOAD_QUIZ',payload:response.data.quiz})
+        })()
+        // eslint-disable-next-line
+    },[])
     const quizCard = (quiz: Quiz) => {
 		return (
-                <div className="col" key={quiz._id}>
+                <div className="col" key={quiz.id}>
                     <div className="card h-100">
                         <img src={quiz.image} className="card-img-top" alt="..."/>
                         <div className="card-body">
@@ -19,10 +27,10 @@ export const Dashboard=()=>{
                             <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <button
                                     className="btn btn-light"
-                                    id={quiz._id}
+                                    id={quiz.id}
                                     onClick={() => {
                                         setShow(true)
-                                        setId(quiz._id)}}>
+                                        setId(quiz.id)}}>
                                     TAKE QUIZ
                                 </button>
                         </div>

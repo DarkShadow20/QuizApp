@@ -8,7 +8,7 @@ export const Quiz=()=>{
     const { quizId } = useParams();
 
     useEffect(()=>{
-        const findCurrentQuiz=quizState.quiz.find((quiz)=>{return quiz._id===quizId})
+        const findCurrentQuiz=quizState.quiz.find((quiz)=>{return quiz.id===quizId})
         quizDispatch({type:"LOAD_CURRENT_QUIZ",payload:findCurrentQuiz})
         //eslint-disable-next-line
     },[])

@@ -1,5 +1,11 @@
 import { Quiz, QuizDataBase } from '../database/database.type';
 
+export type AuthenticationContextType = {
+    isUserLogin: boolean,
+    loginUserWithCredentials: (email: string, password: string) => any
+    signinUser: (name: string, email: string, password: string) => any
+    LogOut: () => void,
+}
 export type Result = {
 	id: string;
 	hasTaken: boolean;

@@ -1,5 +1,5 @@
 import './App.css';
-import { Home ,Dashboard,Quiz,Scoreboard} from './components';
+import { Home ,Dashboard,Quiz,Scoreboard, Login, SignUp} from './components';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,6 +9,8 @@ function App() {
       				<Route path='/dashboard' element={<Dashboard />}></Route>
               <Route path='/quiz/:quizId' element={<Quiz />}></Route>
               <Route path='/quiz/:quizId/scoreboard' element={<Scoreboard />}></Route>
+              <Route path='/login' element={<Login/>}></Route>
+              <Route path='/signup' element={<SignUp/>}></Route>
               <Route path='/' element={<Home/>}></Route>
       </Routes>
     </div>

@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { quizDatabase } from '../database/database';
+//import { quizDatabase } from '../database/database';
 import { QuizContext, State } from './quizContext.type';
 import { quizReducer } from './quizReducer';
 
 export const initialStates: State = {
-	quiz: quizDatabase,
+	quiz: [],
 	currentQuestionNumber: -1,
 	score: 0,
 	result: {
