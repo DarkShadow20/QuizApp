@@ -5,23 +5,29 @@ export const AuthContext = createContext({} as AuthenticationContextType);
 export const AuthProvider: React.FC = ({ children }) => {
   const [isUserLogin, setLogin] = useState(false);
   const [token,setToken]=useState("");
+  const [email,setEmail]=useState("");
   useEffect(() => {
-    const localUser = localStorage?.getItem("QuizAuth")
-    if (localUser) {
-      let loginStatus = JSON.parse(localUser);
-      loginStatus.tokens && setLogin(true);
-      setToken(loginStatus.tokens)
-    }
-  }, []);
+    (async function(){
+      const localUser = await localStorage?.getItem("QuizAuth")
+      console.log(localUser)
+      if (localUser) {
+        let loginStatus = JSON.parse(localUser);
+        loginStatus.tokens && setLogin(true);
+        setToken(loginStatus.tokens)
+        setEmail(loginStatus.emails)
+      }
+    })()
+  },[isUserLogin]);
 
   async function loginUserWithCredentials(email: string, password: string) {
     try {
         const response = await AuthApiLogin(email, password,token);
+        console.log(response)
         if (response.data.success) {
             setLogin(true);
             localStorage.setItem(
               "QuizAuth",
-              JSON.stringify({ tokens: response.data.token })
+              JSON.stringify({ tokens: response.data.token, emails:email })
             );
             return { success: response.data.success };
         }
@@ -41,7 +47,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         setLogin(true);
         localStorage.setItem(
           "QuizAuth",
-          JSON.stringify({ tokens: response.data.user.token })
+          JSON.stringify({ tokens: response.data.user.token,emails:email })
         );
         return { success: response.data.success };
       }
@@ -52,6 +58,8 @@ export const AuthProvider: React.FC = ({ children }) => {
   }
   function LogOut() {
     setLogin(false);
+    setToken("");
+    setEmail("");
     localStorage.removeItem("QuizAuth");
   }
   return (
@@ -61,7 +69,8 @@ export const AuthProvider: React.FC = ({ children }) => {
         loginUserWithCredentials,
         signinUser,
         LogOut,
-        token
+        token,
+        email
       }}
     >
       {children}

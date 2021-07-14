@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
 import { useQuiz } from '../../context/quizContext';
 import { Quiz } from '../../database/database.type';
 import "./CurrentQuestion.css";
+import axios from "axios";
 
 type Prop={
     currentQuiz:Quiz
@@ -10,6 +13,8 @@ type Prop={
 
 export const CurrentQuestion=({currentQuiz}:Prop)=>{
     const navigate = useNavigate();
+	const {quizId}=useParams()
+	const {token}=useAuth();
 	const { quizState, quizDispatch } = useQuiz();
 	const [disableButtons, setDisableButtons] = useState(false);
 	const [optionId, setOptionId] = useState('');
@@ -78,7 +83,7 @@ export const CurrentQuestion=({currentQuiz}:Prop)=>{
 		return '';
 	};
 
-	const viewScore = () => {
+	const viewScore = async () => {
 		navigate(`/quiz/${currentQuiz.id}/scoreboard`, { replace: true });
 		if (!optionId) {
 			quizDispatch({
@@ -92,6 +97,30 @@ export const CurrentQuestion=({currentQuiz}:Prop)=>{
 					].options.find((option) => option.isRight)?.id,
 				},
 			});
+		}
+		if(token){
+			try{
+				const {
+					data: { attemptedQuizScores },
+					status
+				}=await axios({
+					method:'POST',
+					url:'https://QuizApp.kunalgupta9.repl.co/score/scoreboard',
+					data:{
+						score:quizState.score,
+						quizId
+					},
+					headers:{
+						authorization:token
+					},
+				});
+				if(status===200){
+					quizDispatch({type:'LOAD_CURRENT_USER_SCORE_BOARD',payload:attemptedQuizScores})
+				}
+			}
+			catch(error){
+				console.error({error})
+			}
 		}
 	};
     return (

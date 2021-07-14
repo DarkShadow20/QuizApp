@@ -38,6 +38,8 @@ export const quizReducer = (state: State, action: ActionType): State => {
 			};
 		case 'LOAD_CURRENT_QUIZ':
 			return { ...state, currentQuiz: action.payload };
+		case 'LOAD_CURRENT_USER_SCORE_BOARD':
+				return { ...state, currentUserScoreBoard: action.payload };
 		default:
 			return state;
 	}

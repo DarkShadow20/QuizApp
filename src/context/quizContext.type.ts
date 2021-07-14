@@ -5,13 +5,21 @@ export type AuthenticationContextType = {
     loginUserWithCredentials: (email: string, password: string) => any
     signinUser: (name: string, email: string, password: string) => any
     LogOut: () => void,
-	token:string
+	token:string,
+	email:string
 }
 export type Result = {
 	id: string;
 	hasTaken: boolean;
 	selectedOption: string;
 	correctOption: string;
+};
+export type UserBoard = {
+	id: string;
+	numberOfAttempts: Number;
+	quizId: Quiz;
+	score: Number;
+	userId: String;
 };
 export type State = {
 	quiz: Quiz[];
@@ -22,6 +30,7 @@ export type State = {
 		resultArray: Result[];
 	};
 	currentQuiz: null | Quiz;
+	currentUserScoreBoard:UserBoard[];
 };
 
 export type QuizContext = {
@@ -36,4 +45,5 @@ export type ActionType =
 	| { type: 'INITIALIZE_QUESTION_NUMBER_AND_SCORE' }
 	| { type: 'UPDATE_RESULT'; payload: Result }
 	| { type: 'UPDATE_QUIZID'; payload: string }
-	| { type: 'LOAD_CURRENT_QUIZ'; payload: Quiz };
+	| { type: 'LOAD_CURRENT_QUIZ'; payload: Quiz }
+	| { type: 'LOAD_CURRENT_USER_SCORE_BOARD'; payload: UserBoard[] };

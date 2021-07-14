@@ -99,9 +99,25 @@ describe('testing reducer',()=>{
 		//ACT
         const expectedAction=quizReducer(initialStates,action)
         //ASSERT
-        console.log(quizDatabase[0])
         expect(expectedAction.currentQuiz).toEqual(
             quizDatabase[0]
         )
+    })
+    test.only('load current user score data in context',()=>{
+        const action:ActionType={
+            type:'LOAD_CURRENT_USER_SCORE_BOARD',
+            payload:[{
+                id:'1',
+                quizId:quizDatabase[0],
+                numberOfAttempts:1,
+                score:2,
+                userId:'1'
+            }]
+        };
+        const expectedAction=quizReducer(initialStates,action)
+        expect(expectedAction).toEqual({
+            ...initialStates,
+            currentUserScoreBoard:action.payload
+        })
     })
 })

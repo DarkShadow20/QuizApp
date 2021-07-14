@@ -11,6 +11,9 @@ export const Header=()=>{
                 </Link>
                 {isUserLogin ? 
                     (<>
+                        <Link to={`/profile/{email}`} className="header-link">
+                            <i className="fas fa-user"></i>
+                        </Link>
                         <Link to="/" className="header-link">
                             <button onClick={LogOut}>Logout</button>
                         </Link>
