@@ -45,6 +45,8 @@ export const Login=()=>{
                     </div>
                 </div>
                 <button type="submit" className="btn btn-dark center">Log In</button>
+                <br/>
+                <button className="btn btn-dark center" onClick={()=>{setUsername("hriday.bhatia15@gmail.com");setPassword("Test@123")}}>Log in as guestUser</button>
                 <p className="text-explore">Dont have a account?
                 <Link to="/signup" className="moveto-signup">
                         Sign Up</Link>
