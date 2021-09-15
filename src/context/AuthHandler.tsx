@@ -3,7 +3,7 @@ import axios from "axios";
 export const AuthApiLogin = async (email: string, password: string,token:string) => {
     if(token){
       const response = await axios.post(
-        "https://QuizApp.kunalgupta9.repl.co/users/login",
+        "https://f9beb2dd-98bc-4d32-b98c-2be892155154.id.repl.co/users/login",
         {
           email,
           password,
@@ -12,7 +12,7 @@ export const AuthApiLogin = async (email: string, password: string,token:string)
       return response;
     }
     const response = await axios.post(
-      "https://QuizApp.kunalgupta9.repl.co/users/login",
+      "https://f9beb2dd-98bc-4d32-b98c-2be892155154.id.repl.co/users/login",
       {
         email,
         password,
@@ -23,7 +23,7 @@ export const AuthApiLogin = async (email: string, password: string,token:string)
 
 export const AuthApiSignUp = async (name: string, email: string, password: string) => {
     const response = await axios.post(
-      "https://QuizApp.kunalgupta9.repl.co/users/signup",
+      "https://f9beb2dd-98bc-4d32-b98c-2be892155154.id.repl.co/users/signup",
       {
         name,
         email,

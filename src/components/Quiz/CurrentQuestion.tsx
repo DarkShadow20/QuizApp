@@ -105,7 +105,7 @@ export const CurrentQuestion=({currentQuiz}:Prop)=>{
 					status
 				}=await axios({
 					method:'POST',
-					url:'https://QuizApp.kunalgupta9.repl.co/score/scoreboard',
+					url:'https://f9beb2dd-98bc-4d32-b98c-2be892155154.id.repl.co/score/scoreboard',
 					data:{
 						score:quizState.score,
 						quizId

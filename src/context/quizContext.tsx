@@ -22,7 +22,7 @@ export const QuizProvider: React.FC = ({ children }) => {
 				const {
 					data: { quiz },
 					status,
-				} = await axios.get("https://QuizApp.kunalgupta9.repl.co/quiz");
+				} = await axios.get("https://f9beb2dd-98bc-4d32-b98c-2be892155154.id.repl.co/quiz");
 				if (status === 200) {
 					quizDispatch({ type: 'LOAD_QUIZ', payload: quiz });
 				}
