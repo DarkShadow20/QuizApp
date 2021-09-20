@@ -1,4 +1,4 @@
-# [BadZine](https://badzine.netlify.app/) 
+# [NEOQUIZ](https://neoquiz.netlify.app/) 
 Neo Quiz is a web application which enables user to take quiz and enhance their knowledge around different topics.
 
 [Express Server](https://replit.com/@KUNALGUPTA9/QuizApp)
