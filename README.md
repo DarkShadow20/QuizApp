@@ -11,7 +11,7 @@ Neo Quiz is a web application which enables user to take quiz and enhance their 
 
 ## Tech Stack
 - React with TypeScript
-- Style - Tailwind CSS
+- Style - BootStrap CSS
 - Testing Framework - JestJs
 - Navigation - React Router
 - Node
