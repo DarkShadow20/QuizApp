@@ -9,7 +9,7 @@ Neo Quiz is a web application which enables user to take quiz and enhance their 
 - Check Answers, review answers and retake Quiz
 - Personal Scoreboard keeps track of scores obtained while playing different quizzes
 
-## Built With
+## Tech Stack
 - React with TypeScript
 - Style - Tailwind CSS
 - Testing Framework - JestJs
