@@ -20,10 +20,10 @@ export const Header=()=>{
                     </>):(
                     <>
                         <Link to="/login" className="header-link">
-                            <p>Login</p>
+                            <span>Login</span>
                         </Link>
                         <Link to="/signup" className="header-link">
-                            <p>Signup</p>
+                            <span>Signup</span>
                         </Link>
                     </>)
                     }
