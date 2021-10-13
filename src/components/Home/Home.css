@@ -1,0 +1,33 @@
+.display-4{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.btn-dark{
+    margin-top: 5rem;
+    margin-left: 7rem;
+    font-size: 1.2rem;
+    width: 50%;
+    max-height: 20%;
+}
+.text-explore{
+    margin-top: 5rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--tertiary);
+    font-size:1.3rem;
+}
+.text-explore-bottom{
+    text-align: center;
+    font-size:1.3rem;
+    font-weight: 600;
+    color: var(--tertiary);
+}
+@media only screen and (min-width: 600px) {
+    .btn-dark{
+        margin-top: 10rem;
+        margin-left: 39rem;
+        font-size: 1.2rem;
+        width: 20%;
+        max-height: 20%;
+    }
+}

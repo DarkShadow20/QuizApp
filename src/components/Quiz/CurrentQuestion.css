@@ -1,0 +1,40 @@
+.text{
+    margin: 1rem 0 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.question{
+    margin-top: 1.2rem;
+}
+.option{
+    width: 90%;
+}
+.option-btn{
+    margin-top:1rem;
+    background-color: var(--bgcolor);
+    border: none;
+    border-radius: 1rem;
+    max-height: 5rem;
+    padding: 1rem;
+}
+.btn-view{
+    border: none;
+    background-color: var(--secondary);
+    color:var(--primary);
+    margin-left: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+@media only screen and (min-width: 600px) {
+    .question{
+        max-width: 60%;
+    }
+    .option{
+            width: 40%;
+            max-width: 60%;
+    }
+    .btn-view{
+        margin-top: 2.5rem;
+        margin-left: 0.5rem;
+    }
+}

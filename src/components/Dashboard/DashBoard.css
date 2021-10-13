@@ -1,0 +1,19 @@
+
+.btn-light{
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+@media only screen and (min-width: 600px) {
+    .card{
+        max-height: 80%;
+    }
+    .card-img-top{
+        max-height: 50%;
+    }
+    .btn-light{
+        margin-top: 1rem;
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+}
