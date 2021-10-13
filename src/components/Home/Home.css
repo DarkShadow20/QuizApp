@@ -1,5 +1,5 @@
 .display-4{
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     text-align: center;
 }
 .btn-dark{
@@ -14,9 +14,11 @@
     text-align: center;
     font-weight: 600;
     color: var(--tertiary);
+    font-size:1.3rem;
 }
 .text-explore-bottom{
     text-align: center;
+    font-size:1.3rem;
     font-weight: 600;
     color: var(--tertiary);
 }

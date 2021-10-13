@@ -9,7 +9,6 @@ import { useQuiz } from './context/quizContext';
 function App() {
   const {token}=useAuth();
   const {quizDispatch}=useQuiz();
-  console.log(token)
   useEffect(()=>{
     token && (async function(){
       const {
@@ -23,7 +22,6 @@ function App() {
         }
       });
       if(status===200){
-        console.log(attemptedQuizScores)
         quizDispatch({type:'LOAD_CURRENT_USER_SCORE_BOARD',payload:attemptedQuizScores})
       }
     })()

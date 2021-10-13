@@ -9,7 +9,6 @@ export const AuthProvider: React.FC = ({ children }) => {
   useEffect(() => {
     (async function(){
       const localUser = await localStorage?.getItem("QuizAuth")
-      console.log(localUser)
       if (localUser) {
         let loginStatus = JSON.parse(localUser);
         loginStatus.tokens && setLogin(true);
@@ -22,7 +21,6 @@ export const AuthProvider: React.FC = ({ children }) => {
   async function loginUserWithCredentials(email: string, password: string) {
     try {
         const response = await AuthApiLogin(email, password,token);
-        console.log(response)
         if (response.data.success) {
             setLogin(true);
             localStorage.setItem(
@@ -41,7 +39,6 @@ export const AuthProvider: React.FC = ({ children }) => {
   async function signinUser(username: string, email: string, password: string) {
     try {
       const response = await AuthApiSignUp(username, email, password);
-      console.log(response.data)
       if (response.data.success) {
           console.log(response.data.user.token)
         setLogin(true);

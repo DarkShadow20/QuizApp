@@ -7,7 +7,7 @@ export const Header=()=>{
         <>
             <div className="navbar navbar-dark bg-dark">
                 <Link to="/" className="header-link">
-                    <p>NEOQUIZ</p>
+                    <span className="app-name">NEOQUIZ</span>
                 </Link>
                 {isUserLogin ? 
                     (<>
